@@ -41,6 +41,23 @@ int main(int argc, char** argv) {
 	
 	//p1.print();
 	
+	// Point p4 = 4; // Point p4(4)
+	Point p4(4);
+	
+	p4.print();
+	
+	//Point(100, 100);
+	Point(100, 100).print();
+	
+	Point p5 = p4; // copy ctor
+	p4.print();
+	p5.print();
+	
 	delete pp3;
+	
+	p1 = p2; // copy operator
+	//p1.operator =(p2);
+	
+	// p5.~Point(); // special case
 	
 }
