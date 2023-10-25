@@ -1,7 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include "Date.h"
 
 using namespace std;
+
+const char* MY_DATES_FILE_NAME = "myDates.txt";
 
 int main(int argc, char** argv) {
 	Date* d1 = new Date;
@@ -36,6 +39,10 @@ int main(int argc, char** argv) {
     	cout << "d3 is greater d4" <<endl;
     else
     	cout << "d3 is not greater d4" <<endl;
+    	
+    ofstream w(MY_DATES_FILE_NAME, ios::app);
+    w << d3 << endl << d4 << endl;
+    w.close();
     
     return 0;
 }
