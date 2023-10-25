@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <stdexcept>
+#include <iomanip>
+
 #include "Point.h"
 
 int Point::counterCreated = 0;
@@ -81,7 +83,7 @@ bool operator ==(const Point& p1, const Point& p2)
 
 ostream& operator <<(ostream& s, const Point& p) 
 {
-	s << p.getX() << ", " << p.getY();
+	s << std::hex << std::uppercase << "0x" << std::right <<p.getX() << ", 0x" << p.getY() << std::dec;
 	return s;
 }
 

@@ -1,5 +1,11 @@
 #ifndef _DATE_H_
 #define _DATE_H_
+
+#include <iostream>
+
+using std::ostream;
+using std::istream;
+
 /*
 	Перегрузить операторы == << >>  >  <
 */
@@ -16,6 +22,10 @@ public:
 
 	Date();
 	
+	int year() const {return _year;}
+	int month() const {return _month;}
+	int day() const {return _day;}
+	
     void set(int year = 2000, int month = 1, int day = 1);
     void print() const;
     void read();
@@ -30,9 +40,18 @@ public:
 	{
 		return CompareTo(*d) < 0;
 	}
-    bool Greater(const Date* d) const
+	bool Greater(const Date* d) const
 	{
 		return CompareTo(*d) > 0;
+	}
+	
+    bool operator <(const Date& d)  const
+	{
+		return Less(&d);
+	}
+	bool operator >(const Date& d) const
+	{
+		return Greater(&d);
 	}
     
     friend bool IsGreater(const Date& d1, const Date& d2);
@@ -41,6 +60,9 @@ public:
 typedef Date* PDate;
 
 bool IsGreater(const Date& d1, const Date& d2);
+bool operator ==(const Date& d1, const Date& d2);
+ostream& operator <<(ostream& s, const Date& d);
+istream& operator >>(istream& s, Date& d);
 
 
 #endif

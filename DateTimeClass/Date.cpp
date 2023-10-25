@@ -61,4 +61,20 @@ bool IsGreater(const Date& d1, const Date& d2)
     }
     return false;
 }
+bool operator ==(const Date& d1, const Date& d2)
+{
+	return d1.year() == d2.year() && d1.month() == d2.month() &&
+        d1.day() == d2.day();
+}
+ostream& operator <<(ostream& s, const Date& d)
+{
+	s << d.year() << '.' << d.month() << '.' << d.day();
+}
+istream& operator >>(istream& s, Date& d)
+{
+	int year, month, day;
+	cin >> year >> month >> day;
+	d.set(year, month, day);
+}
+
 

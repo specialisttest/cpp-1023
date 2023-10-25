@@ -93,6 +93,9 @@ int main(int argc, char** argv) {
 		cout << "p6 == p7" <<endl;
 	else
 		cout << "p6 != p7" <<endl;
+	
+	p1.setX(28);
+	p1.setY(29);
 		
 	cout << p1 << endl;
 	
@@ -101,6 +104,9 @@ int main(int argc, char** argv) {
 	
 	cout << p1++ << endl;
 	cout << p1 << endl;
+	
+	cout << "OK" << endl;
+	
 	/*Point p8;
 	cout << "Enter coords (x, y): ";
 	cin >> p8;
