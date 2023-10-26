@@ -4,11 +4,12 @@
 #include <iostream>
 #include "Shape.h"
 #include "IScaleable.h"
+#include "MoveableCoords.h"
 
 using std::cout;
 using std::endl;
 
-class Circle : public Shape, public IScaleable, protected Coords
+class Circle : public Shape, public IScaleable, public MoveableCoords, protected Coords
 {
 protected:
 	int r;
@@ -30,11 +31,6 @@ public:
 	{
 		cout << "Circle. (" << getX() << ", " << getY() <<") "
 			<< "Radius: " << getR() << " Color: " << getColor() << endl;
-	}
-	
-	void moveBy(int dx, int dy)
-	{
-		this->Coords::moveBy(dx, dy);
 	}
 	
 	void scale(double factor) override

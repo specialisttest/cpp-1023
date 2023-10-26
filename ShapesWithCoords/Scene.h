@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Shape.h"
 #include "IScaleable.h"
+#include "IMoveable.h"
 
 /* class Scene
 		moveBy(dx, dy)
@@ -69,6 +70,14 @@ public:
 			IScaleable* sc = dynamic_cast<IScaleable*>(objects[i]);
 			if (sc != NULL)
 				sc->scale(factor);
+		}
+	}
+	void moveBy(int dx, int dy)
+	{
+		for(int i = 0; i < size; i++){
+			IMoveable* m = dynamic_cast<IMoveable*>(objects[i]);
+			if (m != NULL)
+				m->moveBy(dx, dy);
 		}
 	}
 	

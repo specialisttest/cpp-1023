@@ -4,11 +4,12 @@
 #include <iostream>
 #include "Shape.h"
 #include "IScaleable.h"
+#include "IMoveable.h"
 
 using std::cout;
 using std::endl;
 
-class Line :  public IScaleable /* should be first for VS*/, public Shape
+class Line :  public IScaleable /* should be first for VS*/, public IMoveable, public Shape
 {
 protected:
 	Coords c1, c2;
@@ -39,10 +40,12 @@ public:
 				<< color << endl;
 	}
 	
-	void moveBy(int dx, int dy)
+	void moveBy(int dx, int dy) override
 	{
-		c1.moveBy(dx, dy);
-		c2.moveBy(dx, dy);
+		//::moveBy(c1, dx, dy);
+		//::moveBy(c2, dx, dy);
+		c1.move(dx,dy);
+		c2.move(dx,dy);
 	}
 	
 	void scale (double factor) override
@@ -50,8 +53,6 @@ public:
 		x2((x2() - x1())*factor + x1());
 		y2((y2() - y1())*factor + y1());
 	}
-	
-	
 	
 };
 

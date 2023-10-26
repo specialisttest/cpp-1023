@@ -17,6 +17,8 @@ int main(int argc, char** argv) {
 	
 	
 	Point* pp1 = new Point(10, 20, "green");
+	
+	pp1->moveBy(1,1);
 	pp1->setX(11);
 	pp1->setY(21);
 	//pp1->draw(); // Point::draw()
@@ -55,6 +57,7 @@ int main(int argc, char** argv) {
 	
 	pscene->draw();
 	pscene->scale(2);
+	pscene->moveBy(1000, 2000);
 	pscene->draw();
 	
 	//delete s1;

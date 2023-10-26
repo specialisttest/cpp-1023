@@ -4,12 +4,13 @@
 
 #include "Shape.h"
 #include "Coords.h"
+#include "MoveableCoords.h"
 
 
 using std::cout;
 using std::endl;
 
-class Point : public Shape, protected Coords
+class Point : public Shape, public MoveableCoords, protected Coords
 {
 //protected:
 //	int x, y;
@@ -31,11 +32,6 @@ public:
 	{
 		//this->Shape::draw();	
 		cout << "Point. (" << getX() << ", " << getY() << ") " << getColor() << endl;
-	}
-	
-	void moveBy(int dx, int dy)
-	{
-		this->Coords::moveBy(dx, dy);
 	}
 	
 	~Point()
