@@ -72,10 +72,10 @@ public:
 		return *this;
 	}
 	
-	virtual void draw() const 
-	{
+	virtual void draw() const = 0;
+	/*{
 		cout << "Shape. " << this->getColor()  << endl;
-	}
+	}*/
 	
 	virtual ~Shape()
 	{
