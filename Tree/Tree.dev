@@ -1,6 +1,6 @@
 [Project]
-filename=Templates.dev
-name=Templates
+FileName=Tree.dev
+Name=Tree
 Type=1
 Ver=2
 ObjFiles=
@@ -28,7 +28,7 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0;0;0;0;0;0;0;0;10;0;0;0;0;0;0;0;0;0;0;0;0;0;8;0;0;0
+CompilerSettings=00000000c0000000000000000
 UnitCount=2
 
 [VersionInfo]
@@ -50,8 +50,8 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
-[Unit1]
-FileName=main.cpp
+[Unit2]
+FileName=Tree.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -60,8 +60,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit2]
-FileName=ReadonlyStorage.h
+[Unit1]
+FileName=main.cpp
 CompileCpp=1
 Folder=
 Compile=1

@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "ReadonlyStorage.h"
+
 using std::cout;
 using std::endl;
 
@@ -45,6 +47,41 @@ int main(int argc, char** argv) {
 		cout << "x = " << x << " y = " << y <<endl;
 		my_swap(x,y);
 		cout << "x = " << x << " y = " << y <<endl;
+	}
+	{
+		ReadonlyStorage r0; 
+		
+		cout << typeid(r0.getData()).name() << endl;
+		
+		ReadonlyStorage r1(5);
+		cout << r1.getData() << endl;
+		
+		ReadonlyStorage<int> r2 (7);
+		ReadonlyStorage<int> r3 = r1 + r2;
+		
+		cout << r3.getData() << endl;
+		
+		ReadonlyStorage<double, 10> r4(2.5);
+		cout << r4.getData() << endl;
+		cout << r4.getMultypliedData() << endl;
+		ReadonlyStorage<double, 10> r5(5.2);
+		ReadonlyStorage<double, 10> r6 = r4 + r5;
+		
+		cout << r6.getData() << endl;
+		
+		RSD r7(2.7);
+		
+		cout << r7.getData() << endl;
+		
+		cout << typeid(r1).name() << endl;
+		cout << typeid(r6).name() << endl;
+		
+		MyClass m1, m2;
+		ReadonlyStorage<MyClass> c1(m1);
+		ReadonlyStorage<MyClass> c2(m2);
+		ReadonlyStorage<MyClass> c3 = c1 + c2;
+		
+		
 	}
 	
 	

@@ -1,6 +1,6 @@
 [Project]
-filename=Templates.dev
-name=Templates
+filename=Exceptions.dev
+name=Exceptions
 Type=1
 Ver=2
 ObjFiles=
@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=ReadonlyStorage.h
+FileName=my_exception.h
 CompileCpp=1
 Folder=
 Compile=1

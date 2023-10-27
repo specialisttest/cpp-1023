@@ -1,6 +1,6 @@
 [Project]
-filename=Templates.dev
-name=Templates
+FileName=List.dev
+Name=List
 Type=1
 Ver=2
 ObjFiles=
@@ -28,7 +28,7 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0;0;0;0;0;0;0;0;10;0;0;0;0;0;0;0;0;0;0;0;0;0;8;0;0;0
+CompilerSettings=00000000c0000000000000000
 UnitCount=2
 
 [VersionInfo]
@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=ReadonlyStorage.h
+FileName=List.h
 CompileCpp=1
 Folder=
 Compile=1
