@@ -4,19 +4,6 @@
 #include <string>
 #include <stdexcept>
 
-class invalid_remove_object : public std::invalid_argument
-{
-	private:
-		int invalid_data;
-	public:
-		invalid_remove_object(const std::string& message, int _invalid_data)
-			: std::invalid_argument(message), invalid_data(_invalid_data)
-		{}
-		
-		int getInvalidData()
-		{ return invalid_data; }
-};
-
 template<class T>
 class List
 {
@@ -29,7 +16,7 @@ class List
 				Node<T1>* next;
 			public:
 				Node(T1* _value)
-				: value(_value), next(0) {}
+				: value(_value), next(nullptr) {}
 				
 				T1*  get() const
 				{ return this->value; }
@@ -96,9 +83,7 @@ class List
 				p = p->next;
 			}
 			
-			//throw "Object for remove not found";
-			//throw std::invalid_argument("Object for remove not found");
-			throw invalid_remove_object("Object for remove not found", r);
+			throw std::invalid_argument("Object for remove not found");
 		}
 		
 		void clear()
